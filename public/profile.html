@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Page</title>
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <!--Create a work order-->
+                <div class="d-flex h-100" id="create">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Create a Work Order</h3>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-cogs"></i></span>
+                                    </div>
+                                    <select class="custom-select" id="machineChoices">
+                                        <option selected>Choose...</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+
+                                </div>
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="far fa-sticky-note"></i></span>
+                                    </div>
+                                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <input value="Add" class="btn float-right login_btn" id="addOrder">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <!--View open work orders-->
+                <div class="d-flex h-100" id="view">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Create a Work Order</h3>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-at"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="username" id="inputUser">
+
+                                </div>
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    </div>
+                                    <input type="password" class="form-control" placeholder="password"
+                                        id="inputPassword">
+                                </div>
+                                <div class="row align-items-center remember">
+                                    <input type="checkbox">Remember Me
+                                </div>
+                                <div class="form-group">
+                                    <input value="Login" class="btn float-right login_btn" id="loginButton">
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="card-footer" id="messages">
+
+                            <div class="d-flex justify-content-center">
+                                <a href="#">Forgot your password?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+
+</html>
