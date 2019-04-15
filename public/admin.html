@@ -14,98 +14,88 @@
 </head>
 
 <body>
+    <div class="form-group" id="logoutwrapper">
+        <input value="Log out" class="btn login_btn" id="logout">
+    </div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
-                <!-- Create a machine -->
-                <div class="d-flex h-100" id="create">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Create a Machine</h3>
-                        </div>
-                        <div class="card-body">
-                            <form>
-                                <div class="input-group form-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-signature"></i></span>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="Machine Name" id="machineName">
-                                </div>
-                                <div class="input-group form-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-hashtag"></i></span>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="Serial Number"
-                                        id="serialNumber">
-                                </div>
-                                <div class="form-group">
-                                    <input value="Add" class="btn float-right login_btn" id="addMachine">
-                                </div>
-                            </form>
-                        </div>
-                        <div class="card-footer" id="messages">
-                            <div class="d-flex justify-content-center">
-                                <p id="targetMessage1"></p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-md-8">
+                <div class="author-container">
+                    <h1>Users</h1>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th># of Orders</th>
+                                <th>See Work Orders</th>
+                                <th>Delete User</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="form-row">
+                                <form id="author-form">
+                                    <td colspan="4">
+                                        <div class="input-group form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-signature"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="User">
+                                        </div>
+                                    </td>
+                                    <td><input value="Add" class="btn float-right login_btn" id="newUser">
+                                    </td>
+                                </form>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <!-- Create users -->
-                <div class="d-flex h-100" id="view">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Create Users</h3>
-                        </div>
-                        <div class="card-body">
-                            <form>
-                                <div class="input-group form-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-at"></i></span>
+            <div class="col-md-4">
+                <div class="machine-container">
+                    <div class="d-flex h-100" id="create">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Create a Machine</h3>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="input-group form-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-signature"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Machine Name"
+                                            id="machineName">
                                     </div>
-                                    <input type="text" class="form-control" placeholder="username" id="inputUser">
-
-                                </div>
-                                <div class="input-group form-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    <div class="input-group form-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-hashtag"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Serial Number"
+                                            id="serialNumber">
                                     </div>
-                                    <input type="password" class="form-control" placeholder="password"
-                                        id="inputPassword">
+                                    <div class="form-group">
+                                        <input value="Add" class="btn float-right login_btn" id="addMachine">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer" id="messages">
+                                <div class="d-flex justify-content-center">
+                                    <p id="targetMessage1"></p>
                                 </div>
-                                <div class="row align-items-center remember">
-                                    <input type="checkbox" id="isAdmin" state="no">User is admin
-                                </div>
-                                <div class="form-group">
-                                    <input value="Add" class="btn float-right login_btn" id="addUser">
-                                </div>
-                            </form>
-
-                        </div>
-                        <div class="card-footer" id="messages">
-                            <div class="d-flex justify-content-center">
-                                <p id="targetMessage2"></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="form-group" id="logoutwrapper">
-                <input value="Log out" class="btn login_btn" id="logout">
-            </div>
-        </div>
-    </div>
-
-  
 
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/admin.js"></script>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/admin.js"></script>
 </body>
 
 </html>

@@ -1,23 +1,13 @@
 module.exports = function (sequelize, DataTypes) {
     var WorkOrder = sequelize.define("WorkOrder", {
-        title: {
+        body: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
-        body: {
-            type: DataTypes.TEXT,
-            allowNull: false,
-            len: [1]
-        },
-        machine: {
-            type: DataTypes.TEXT,
-            allowNull: false,
-            len: [1]
-        },
-        section: {
+        postedBy: {
             type: DataTypes.TEXT,
             allowNull: false,
             len: [1]
