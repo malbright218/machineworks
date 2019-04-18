@@ -12,9 +12,6 @@ module.exports = function(sequelize, DataTypes) {
         }
     })
 
-    Machine.associate = function(models) {
-        Machine.hasMany(models.WorkOrder)
-    };
 
    
 

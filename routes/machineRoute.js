@@ -10,7 +10,6 @@ module.exports = function (app) {
     
       app.get("/api/machine", function (req, res) {
         db.Machine.findAll({
-          include: [db.WorkOrder]
         }).then(function (data) {
           res.json(data)
         });

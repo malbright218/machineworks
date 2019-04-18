@@ -24,12 +24,13 @@ align-content: center;
 }
 
 .card{
-height: 370px;
+height: 480px;
 margin-top: auto;
 margin-bottom: auto;
-width: 400px;
+width: 800px;
 background-color: rgba(0,0,0,0.5) !important;
 }
+
 
 .social_icon span{
 font-size: 60px;
@@ -42,8 +43,8 @@ color: white;
 cursor: pointer;
 }
 
-.card-header h3{
-color: white;
+h3{
+color: #fff;
 }
 
 .social_icon{
@@ -128,5 +129,17 @@ margin-left: 4px;
 }
 
 label{ 
+    color: #FFC312;
+}
+
+#notesForm {
+    height: 250px;
+}
+
+#noteArea {
+    height: 90%;
+}
+
+th, td {
     color: #FFC312;
 }

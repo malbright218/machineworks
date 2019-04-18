@@ -1,33 +1,47 @@
 $(document).ready(function () {
 
-  var user = $("#newUsername");
-  var pass = $("#newPassword");
+  var userNew = $("#newUserName");
+  var passNew = $("#newUserPassword");
+  
+  // function test(event) {
+  //   event.preventDefault()
 
-  function test(event) {
-    event.preventDefault()
+  //   console.log(userNew.val().trim());
+  //   console.log(passNew.val().trim())
+  // }
 
-    console.log(user.val().trim());
-    console.log(pass.val().trim())
+  $("#addNewUser").on("click", handleAddUser);
+  $("#userIsAdmin").on("click", setAdminState)
+
+  function setAdminState() {
+    if($("#userIsAdmin").attr("state") === "no") {      
+      $("#userIsAdmin").attr("state", "yes")
+    } else if ($("#userIsAdmin").attr("state") === "yes") {      
+      $("#userIsAdmin").attr("state", "no")
+    }
   }
 
-  $("#addUser").on("click", handleUserSignUp);
-
-
-  function handleUserSignUp(event) {
+  function handleAddUser(event) {
     event.preventDefault();
     $.get("/api/company", newUser)
 
     function newUser(data) {
-      console.log(data)
-      if (!user.val().trim().trim()) {
+      console.log(data)    
+
+
+      if (!userNew.val().trim().trim()) {
         return;
       }
       var generateUser = ({
-        userName: user.val().trim(),
-        password: pass.val().trim(),
-        UserId: data[0].id
+        userName: userNew.val().trim(),
+        password: passNew.val().trim(),
+        isAdmin: $("#userIsAdmin").attr("state"),
+        CompanyId: 1
       })
+
+      console.log(generateUser)
       addUser(generateUser)
+      window.location.href="admin.html"
     }    
   }
 

@@ -26,39 +26,33 @@
         <div class="d-flex justify-content-center h-100">
             <div class="card">
                 <div class="card-header">
-                    <h3>New User</h3>
+                    <h3>New Machine</h3>
                 </div>
                 <div class="card-body">
                     <form>
                         <!--BREAK-->
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <span class="input-group-text"><i class="fas fa-cog"></i></span>
                             </div>
-                            <input type="text" class="form-control" id="newUserName" placeholder="username">
+                            <input type="text" class="form-control" id="machineName" placeholder="Model Name">
                         </div>
                         <!--BREAK-->  
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                <span class="input-group-text"><i class="fas fa-barcode"></i></span>
                             </div>
-                            <input type="password" class="form-control" id="newUserPassword" placeholder="password">
+                            <input type="text" class="form-control" id="machineSerial" placeholder="Serial #">
                         </div>
-                        <!--BREAK-->  
-                        <div class="row align-items-center remember">
-                            <input type="checkbox" id="userIsAdmin" state="no">User is Admin
-                        </div>
-                        <br>
                         <!--BREAK-->  
                         <div class="form-group" id="signUpDivButton">
-                            <input type="submit" value="Add" class="btn login_btn" id="addNewUser">
+                            <input type="submit" value="Add" class="btn login_btn" id="addNewMach">
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
-    
+    </div>  
     
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -70,7 +64,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <script src="js/newUser.js"></script>
+    <script src="js/create.js"></script>
 
 </body>
 
