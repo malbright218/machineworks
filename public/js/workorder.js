@@ -40,6 +40,7 @@ $(document).ready(function () {
             for (var i = 0; i < data.length; i++) {
                 var option = $("<option>")
                 option.attr("id", data[i].id)
+                option.attr("name", data[i].name)
                 option.append(data[i].name)
                 $("#machineChoice").append(option)
             }
@@ -53,14 +54,20 @@ $(document).ready(function () {
         $.get("/api/machine", machData)
         function machData(data) {
             console.log(data)
-            var id = $("#machineChoice option:selected").attr("id")
+            var spec = $("#machineChoice option:selected").attr("name");
             var text = $("#noteArea")
             var userPost = sessionStorage.getItem("username")
+            var hours = $("#inputHours")
+            var id = $("#machineChoice option:selected").attr("id")
+            
+            
 
             var newOrder = {
-                machineID: id,
+                machineSpec: spec,
                 textBody: text.val().trim(),
-                postedBy: userPost
+                postedBy: userPost,
+                length: hours.val().trim(),
+                MachineId: id
             }
 
             console.log(newOrder)
@@ -70,6 +77,7 @@ $(document).ready(function () {
 
     function addOrder(order) {
         $.post("/api/order", order)
+        
     }
 
 

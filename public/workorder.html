@@ -14,6 +14,28 @@
 </head>
 
 <body>
+        <nav class="navbar navbar-expand-lg">
+                <a class="navbar navbar-brand nav-link" href="#">ADMIN</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="navbar nav-link" href="signup.html">Create Users</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="navbar nav-link" href="viewusers.html">View Users</a>
+                      </li>
+                      <li class="nav-item active">
+                        <a class="navbar nav-link" href="create.html">Create Machines</a>
+                      </li>
+                      <li class="nav-item active">
+                        <a class="navbar nav-link" href="machines.html">View Machines</a>
+                      </li>
+                      <li class="nav-item active">
+                        <a class="navbar nav-link" href="workorder.html">Create Work Order</a>
+                      </li>
+                  </ul>
+                </div>
+              </nav>
     <div class="container" id="signInCard">
         <div class="d-flex justify-content-center h-100">
             <div class="card">
@@ -30,8 +52,13 @@
                         </div>
                         <div class="form-group" id="notesForm">
                             <label for="noteArea">Notes</label>
-                            <textarea class="form-control" id="noteArea" rows="3"></textarea>
+                            <textarea onfocus="clearContents(this);" class="form-control" id="noteArea" rows="3"></textarea>
                         </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Hours Worked</label>
+                            <input onfocus="clearContents(this);" type="text" class="form-control" id="inputHours" aria-describedby="Hours" placeholder="Hours">
+                            
+                          </div>
                         <div class="form-group" id="signUpDivButton">
                             <input value="Add" class="btn login_btn" id="addOrder">
                         </div>
@@ -44,14 +71,13 @@
         </div>
     </div>
 
-
-
-
-
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/workorder.js"></script>
+    <script>
+    function clearContents(element) {
+        element.value = '';
+    }
+    </script>
 </body>
 
 </html>

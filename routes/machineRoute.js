@@ -10,8 +10,9 @@ module.exports = function (app) {
     
       app.get("/api/machine", function (req, res) {
         db.Machine.findAll({
-        }).then(function (data) {
-          res.json(data)
+          include: [db.WorkOrder]
+        }).then(function (dbComp) {
+          res.json(dbComp)
         });
       });
 

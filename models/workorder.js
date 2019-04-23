@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     var WorkOrder = sequelize.define("WorkOrder", {
-        machineID: {
+        machineSpec: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
@@ -16,8 +16,20 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.TEXT,
             allowNull: false,
             len: [1]
+        },
+        length: {
+            type: DataTypes.TEXT,
+            allowNull: false
         }
     });
+
+    WorkOrder.associate = function (models) {
+        WorkOrder.belongsTo(models.Machine, {
+            foreignKey: {
+                allowNull: false
+            }
+        })
+    }
 
     return WorkOrder;
 }
