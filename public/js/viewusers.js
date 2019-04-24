@@ -1,14 +1,69 @@
 $(document).ready(function () {
-    
-    getUserData();
 
-    $("#reset").on("click", function() {
-        var id = $("#userChoice option:selected").attr("id")    
-        console.log(id)
+    getUserData();
+    // FUNCTION TO RESET PASSWORD
+    $("#reset").on("click", function () {
+        var id = $("#userChoice option:selected").attr("id")
+        var newPass;
+        var passIn = prompt("Please enter a new password")
+        if (passIn == null || passIn == "") {
+            return;
+        } else {
+            newPass = passIn;
+        }
+        var updateUser = {};
+        updateUser.id = id;
+        updateUser.password = newPass
+        updatePassword(updateUser)
     })
 
-    
+    function updatePassword(pass) {
+        $.ajax({
+            method: "PUT",
+            url: "/api/user",
+            data: pass
+        })
+    }
+    ////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////
+    //FUNCTION TO MAKE USER AN ADMIN
+    $("#madmin").on("click", function () {
+        console.log("make an admin")
+        var id = $("#userChoice option:selected").attr("id")
+        var updateUser = {};
+        updateUser.id = id
+        updateUser.isAdmin = "yes"
+        updateAdmin(updateUser)
+    })
 
+    function updateAdmin(admin) {
+        $.ajax({
+            method: "PUT",
+            url: "/api/user",
+            data: admin
+        })
+    }
+    ////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////
+    //FUNCTION TO REMOVE ADMIN STATUS
+    $("#radmin").on("click", function () {
+        console.log("remove admin")
+        var id = $("#userChoice option:selected").attr("id")
+        var updateUser = {};
+        updateUser.id = id
+        updateUser.isAdmin = "no"
+        removeAdmin(updateUser)
+    })
+    function removeAdmin(admin) {
+        $.ajax({
+            method: "PUT",
+            url: "/api/user",
+            data: admin
+        })
+    }
+    ////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////
+    //FUNCTION TO GO HOME
     $("#goHome").on("click", home)
     function home() {
         console.log("click")
@@ -39,7 +94,6 @@ $(document).ready(function () {
         $.get("/api/user", display)
 
         function display(data) {
-            console.log(data)
             for (var i = 0; i < data.length; i++) {
                 var option = $("<option>")
                 option.attr("id", data[i].id)
@@ -50,13 +104,3 @@ $(document).ready(function () {
         }
     }
 })
-
-
-
-
-
-
-
-
-
-

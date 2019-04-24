@@ -26,10 +26,12 @@ $(document).ready(function () {
                 if ( (data[i].userName == $("#inputUser").val().trim()) && (data[i].password == $("#inputPassword").val().trim()) && (data[i].isAdmin === 'yes') ) {
                     window.location.href = "admin.html"
                     sessionStorage.setItem("username", data[i].userName)
+                    sessionStorage.setItem("admin", data[i].isAdmin)
                     break;
                 } else if ( (data[i].userName == $("#inputUser").val().trim()) && (data[i].password == $("#inputPassword").val().trim()) ) {
-                    window.location.href = "profile.html"
+                    window.location.href = "workorder.html"
                     sessionStorage.setItem("username", data[i].userName)
+                    sessionStorage.setItem("admin", data[i].isAdmin)
                     break;
                 }
                 

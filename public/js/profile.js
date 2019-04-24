@@ -1,20 +1,20 @@
 $(document).ready(function () {
 
-    // renderMachinesToList();
+    renderMachinesToList();
     $("#addOrder").on("click", generateWorkOrder)
 
-    // function renderMachinesToList() {
-    //     $.get("api/machine", machData)
+    function renderMachinesToList() {
+        $.get("api/machine", machData)
 
-    //     function machData(data) {
-    //         for (var i =0; i < data.length; i++) {
-    //             var blankoption = $("<option></option>")
-    //             blankoption.attr("value", data[i].id)
-    //             blankoption.append(data[i].name)
-    //             $("#machineChoices").append(blankoption)
-    //         }
-    //     }
-    // }
+        function machData(data) {
+            for (var i =0; i < data.length; i++) {
+                var blankoption = $("<option></option>")
+                blankoption.attr("value", data[i].id)
+                blankoption.append(data[i].name)
+                $("#machineChoices").append(blankoption)
+            }
+        }
+    }
 
     function generateWorkOrder() {
         console.log("clicked")

@@ -25,11 +25,22 @@ app.get("/api/user/:id", function(req, res) {
   })
 
 
+// PUT route for updating passwords
+app.put("/api/user", function(req, res) {
+  db.User.update(
+    req.body,
+    {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(dbPost) {
+    res.json(dbPost);
+  });
+});
+};
 
 
 
 
 
 
-
-}
