@@ -28,10 +28,10 @@ app.use(express.static("public"));
 // Routes FIX THESE BEFORE YOU START
 // =============================================================
 // require("./routes/html_routes.js")(app);
-require("./routes/userRoute.js")(app);
-require("./routes/companyRoute.js")(app);
-require("./routes/machineRoute.js")(app);
-require("./routes/orderRoute.js")(app);
+// require("./routes/userRoute.js")(app);
+// require("./routes/companyRoute.js")(app);
+// require("./routes/machineRoute.js")(app);
+// require("./routes/orderRoute.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
